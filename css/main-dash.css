@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Radley:ital@0;1&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.2s;
+}
+
+header {
+    padding: 20px;
+    border-bottom: lightgray solid 1px;
+}
+
+header>nav {
+    padding: 0px 100px;
+}
+
+header>nav>div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+}
+
+header>nav>div>button {
+
+    grid-column: 12/13;
+
+
+}
+
+header>nav>div>div {
+    grid-column: 1/5;
+    display: flex;
+    justify-content: space-between;
+}
+
+header>nav>div>div>a {
+    text-decoration: none;
+    color: #1B1B1B;
+    font-size: 0.9em;
+}
+
+.sub-header {
+    padding: 0px 120px;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sub-header>div:first-child {
+    padding: 20px 0px;
+}
+
+.sub-header>div:first-child>h1 {
+    font-weight: 400;
+    font-size: 2em;
+}
+
+
+.sub-header .inner-nav {
+    padding: 20px 0px;
+
+}
+
+.sub-header .inner-nav>a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #1B1B1B;
+}
+
+
+.sub-header .inner-nav .active {
+    background-color: lightgray;
+    border-radius: 100px;
+}
+
+.myPets {
+    padding: 0px 120px;
+}
+
+.myPets>div:first-child {
+    border-top: solid lightgray 1px;
+    border-bottom: solid lightgray 1px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.myPets>div:first-child>button {
+    padding: 5px 40px;
+}
+
+.myPets .petListView table {
+    width: 100%;
+}
+
+
+tr {
+    border-bottom: solid lightgray 1px;
+
+}
+
+
+.myPets .petListView table tr td {
+
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.myPets .petListView .pet-card {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    border-bottom: solid lightgray 1px;
+    padding: 10px 0px;
+    place-items: center;
+
+}
+
+.myPets .petListView .pet-card:hover {
+    background-color: lightgray;
+}
+
+.table-head>p {
+    font-size: 1em;
+    opacity: 1;
+    color: black;
+}
+
+.table-content {
+    font-size: 0.8em;
+    opacity: 0.5;
+    color: black;
+}
+
+
+.myPets .petListView .pet-card>div .name {
+    font-size: 1em;
+    opacity: 1;
+
+}
+
+.myPets .petListView .pet-card>div>p {
+    text-align: center;
+
+
+}
+
+.myPets .petListView .pet-card>div:nth-child(1) {
+    grid-column: 1/2;
+}
+
+.myPets .petListView .pet-card>div:nth-child(2) {
+    grid-column: 2/3;
+}
+
+.myPets .petListView .pet-card>div:nth-child(3) {
+    grid-column: 3/5;
+}
+
+.myPets .petListView .pet-card>div:nth-child(4) {
+    grid-column: 5/6;
+}
+
+.myPets .petListView .pet-card>div:nth-child(5) {
+    grid-column: 6/8;
+}
+
+.myPets .petListView .pet-card>div:nth-child(6) {
+    grid-column: 8/10;
+}
+
+.pet-card a {
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+.actions>a {
+    padding: 5px 20px;
+    color: black;
+
+}
+
+.actions>a >img{
+    width: 15px;
+    height: 15px;
+}
+.actions>a:last-child {}

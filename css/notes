@@ -1,0 +1,11 @@
+<div class="row">
+                            <div><input type="radio" name="species" id="species-radio1" value="Dog" <?php if ($pet['species'] === "Dog") {
+                                                                                                        echo "checked";
+                                                                                                    } ?>> <span for="">Canine(Dogs)</span></div>
+                            <div><input type="radio" name="species" id="species-radio2" value="Cat" <?php if ($pet['species'] === "Cat") {
+                                                                                                        echo "checked";
+                                                                                                    } ?>><span for="">Feline(Cats)</span></div>
+                            <div><span>Others:</span>
+                                <input name="species" type="text" id="otherSpeciesInput" placeholder="Others" <?php if ($pet['species'] != "Dog" && $pet['species'] != "Cat") echo $pet['species']  ?>>
+                            </div>
+                        </div>
