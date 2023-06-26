@@ -1,3 +1,21 @@
+<?php
+
+include('connections.php');
+session_start();
+
+
+
+if (isset($_SESSION['user'])) {
+
+
+    $user = $_SESSION['user'];
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +23,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <title>Pawtique</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="js/script.js"></script>
 </head>
@@ -24,8 +41,22 @@
                     <li><a href="#">Services</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Our Clinics</a></li>
-                    <li><a href="#">Set an Appointment</a></li>
-                    <li><a href="#">Log - in</a></li>
+
+
+                    <?php
+
+                    if (isset($_SESSION['user'])) {
+                
+                        echo '<li><form action="logout.php" method="post">
+                                  <input type="submit" value="Logout">
+                              </form></li>';
+                    } else {
+                        echo '<li><a href="#signup">Be A Member</a></li>';
+                    }
+
+
+
+                    ?>
                 </ul>
             </div>
         </nav>
@@ -120,16 +151,16 @@
                 <label for="section1" class="accordion__label">See More</label>
                 <div class="accordion__content">
                     <p>
-                        <ul>
-                            <li>Wellness Examinations</li>
-                            <li>Vaccinations</li>
-                            <li>Parasite Prevention</li>
-                            <li>Internal Medicine</li>
-                            <li>Diagnostic Imaging</li>
-                            <li>Surgery</li>
-                            <li>Dental Care</li>
-                            <li>Emergency Care</li>
-                        </ul>
+                    <ul>
+                        <li>Wellness Examinations</li>
+                        <li>Vaccinations</li>
+                        <li>Parasite Prevention</li>
+                        <li>Internal Medicine</li>
+                        <li>Diagnostic Imaging</li>
+                        <li>Surgery</li>
+                        <li>Dental Care</li>
+                        <li>Emergency Care</li>
+                    </ul>
 
                     </p>
                 </div>
@@ -201,16 +232,28 @@
         </div>
     </div>
 </section>
-<section class="cta">
+<section class="cta" id="signup">
     <div>
         <div>
             <div class="cta-photo"><img src="assets/cta-photo.png" alt=""></div>
             <div>
-                <h1>Set an Appointment at the Pawtique!</h1>
-                <p>Book an appointment today and give your pet the exceptional care they deserve at The Pawtique.
+                <h1>Be a member at the Pawtique!</h1>
+                <p>Apply for a membership today and give your pet the exceptional care they deserve at The Pawtique.
                     Experience the perfect blend of veterinary expertise, luxurious grooming, and a stress-free
                     environment.</p>
-                <a href="signup.php">Sign Up</a>
+                <!-- <a href="signup.php">Sign Up</a> -->
+                <?php
+
+                    if (isset($_SESSION['user'])) {
+                
+                        echo '<a href="main-dashboard.php">Go to Dashboard</a>';
+                    } else {
+                        echo '<a href="signup.php">Sign Up</a>';
+                    }
+
+
+
+                    ?>
             </div>
         </div>
     </div>

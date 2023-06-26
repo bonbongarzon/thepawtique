@@ -1,0 +1,36 @@
+footer {
+    background-color: #1B1B1B;
+    color: white;
+}
+
+footer h1 {
+    font-family: 'Poppins';
+    font-size: 1em;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer>div {
+    padding: 50px 100px;
+    display: flex;
+
+    gap: 50px;
+}
+
+footer>div>div:first-child {
+    width: 50%;
+}
+
+footer>div>div {
+    display: flex;
+    flex-direction: column;
+
+}

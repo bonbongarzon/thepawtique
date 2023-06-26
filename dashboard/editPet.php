@@ -44,7 +44,7 @@ $pet = checkPetFromDatabase($conn, $pet_id);
                     <h1>Edit Pet Information</h1>
                     <p>Now let's focus on the common details of your pet.</p>
                 </div>
-                <form id="confirmationForm" action="../includes/includes_myPets.php" method="post">
+                <form id="confirmationForm" action="../includes/insertPet.php" method="post">
                     <input type="text" name="pet_id" id="" hidden value="<?php echo $pet_id ?>">
                     <div class="col">
                         <label for="">What is the name of your pet?</label>
@@ -52,7 +52,7 @@ $pet = checkPetFromDatabase($conn, $pet_id);
                     </div>
                     <div class="row">
                         <label for="">When was your pet born?</label>
-                        <input name="pet_dob" type="date" value="<?php echo $pet['pet_dob'] ?>">
+                        <input name="pet_dob" type="date" value="<?php echo $pet['petDob'] ?>">
                     </div>
                     <div class="col">
                         <label for="species">What species is your pet?</label>
@@ -121,6 +121,15 @@ $pet = checkPetFromDatabase($conn, $pet_id);
                                                                                                         echo "checked";
                                                                                                     } ?>><label for="">Unknown</label></div>
                         </div>
+                    </div>
+                    <div class="col">
+                        
+                            <label for="remarks">Remarks</label>
+                            <div class="text-area-container" style="width:100%">
+                            <textarea class="textarea" style="width:100%; padding:20px" name="remarks" id="" cols="30" rows="5" placeholder="Loves to play on grass.." ><?php echo $pet['remarks'] ?></textarea>
+                            </div>
+                        
+                        
                     </div>
                     <div class="col"><button name="updatePet" class="addPet">Edit My Pet</button></div>
                 </form>

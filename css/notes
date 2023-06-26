@@ -9,3 +9,17 @@
                                 <input name="species" type="text" id="otherSpeciesInput" placeholder="Others" <?php if ($pet['species'] != "Dog" && $pet['species'] != "Cat") echo $pet['species']  ?>>
                             </div>
                         </div>
+
+
+
+
+
+ownerEmail . 
+petname . 
+pet_dob
+species .
+breed
+color
+sex
+updatedVaccines
+isMicrochipped

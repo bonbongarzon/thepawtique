@@ -1,16 +1,16 @@
 <?php
 
-include('connections.php');
-session_start();
+// include('connections.php');
+// session_start();
 
-if (isset($_SESSION['user'])) {
+// if (isset($_SESSION['user'])) {
 
 
-    $user = $_SESSION['user'];
-} else {
-    echo '<script>alert("Something went wrong! No account exists");</script>';
-    echo '<script>window.location.href = "index.php";</script>';
-}
+//     $user = $_SESSION['user'];
+// } else {
+//     echo '<script>alert("Something went wrong! No account exists");</script>';
+//     echo '<script>window.location.href = "index.php";</script>';
+// }
 
 
 ?>
@@ -26,19 +26,8 @@ if (isset($_SESSION['user'])) {
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div>
-                <div> <a href="">Pawtique</a>
-                    <a href="">Main Dashboard</a>
-                    <a href="">Pets</a>
-                    <a href="">Account</a>
-                </div>
 
-                <button>Logout</button>
-            </div>
-        </nav>
-    </header>
+<?php include("nav-dashboard.php") ?>
 
 
     <section class="sub-header">
@@ -48,14 +37,14 @@ if (isset($_SESSION['user'])) {
         </div>
 
         <div class="inner-nav">
-            <a href="#" class=" inner-nav active">Recent Activities</a>
-            <a href="#">My Pets</a>
+            <a href="#" class=" inner-nav ">Recent Activities</a>
+            <a href="#" class=" inner-nav active">My Pets</a>
         </div>
 
     </section>
     <section class="myPets">
         <div>
-            <a href="dashboard/addPet.php">Add New Pet</a>
+            <a class="addPetBTN" href="addPet.php">Add New Pet</a>
         </div>
         <div class="petListView">
 
@@ -64,8 +53,8 @@ if (isset($_SESSION['user'])) {
 
             <?php
 
-            $sql = "SELECT * FROM pets";
-            $result = $conn->query($sql);
+            $sql = "SELECT * FROM pet WHERE ownerEmail = '$user' ORDER BY ID DESC; ";
+            $result = mysqli_query($conn,$sql);
 
             if ($result->num_rows > 0) {
                 // Output table header
@@ -104,7 +93,7 @@ if (isset($_SESSION['user'])) {
                         </div>
                         <div class="table-content">
                             <p><?php
-                                $dateString = $row["pet_dob"];
+                                $dateString = $row["petDob"];
                                 $timestamp = strtotime($dateString);
                                 $formattedDate = date("F j, Y", $timestamp);
                                 echo $formattedDate; ?></p>
@@ -131,6 +120,7 @@ if (isset($_SESSION['user'])) {
 
             ?>
         </div>
+
 
     </section>
 </body>

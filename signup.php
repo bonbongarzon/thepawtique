@@ -25,13 +25,13 @@ include('function/function.php');
             <div>
                 <div class="cta-photo"><img src="assets/cta-photo.png" alt=""></div>
                 <div>
-                    <a href=""><i class="fa-solid fa-arrow-left"></i></a>
+                    <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
 
                     <h1>Create an Account</h1>
-                    <p>Book an appointment today and give your pet the exceptional care they deserve at The Pawtique.
+                    <p>Apply for membership today and give your pet the exceptional care they deserve at The Pawtique.
                         Experience the perfect blend of veterinary expertise, luxurious grooming, and a stress-free
                         environment.</p>
-                    <form action="function/function.php" method="post">
+                    <form action="includes/function.php" method="post">
                         <?php
 
                         if (isset($_GET['error'])) {
@@ -62,6 +62,9 @@ include('function/function.php');
             </div>
         </div>
     </section>
+    <?php
+    include('footer.php')
+    ?>
 </body>
 
 </html>

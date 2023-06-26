@@ -118,3 +118,7 @@
     color: white;
     border: none;
 }
+
+.textarea{
+    width: 100%;
+}

@@ -44,7 +44,7 @@ $pet = checkPetFromDatabase($conn, $pet_id);
             <h1>Are you sure you want to delete <?php echo $pet['petname'] ?>'s information?</h1>
             <p>If you have any concerns or questions, we're here to assist you and explore alternative options that might better suit your needs.</p>
             <div class="row"><a href="../main-dashboard.php">No, Back to Dashboard</a>
-                <form action="../includes/includes_myPets.php" method="post">
+                <form action="../includes/insertPet.php" method="post">
                 <input type="text" name="pet_id" value="<?php echo$pet_id?>" hidden>    
                 <button class="deleteBTN" name="performDelete">Confirm Delete</button></form>
             </div>
