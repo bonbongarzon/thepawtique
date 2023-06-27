@@ -27,19 +27,19 @@
 
 <body>
 
-<?php include("nav-dashboard.php") ?>
+    <?php include("nav-dashboard.php") ?>
 
 
     <section class="sub-header">
         <div>
-            <h1>My  Pet's Dashboard</h1>
+            <h1>My Pet's Dashboard</h1>
             <p>Manage everything you need here.</p>
         </div>
 
         <div class="inner-nav">
-        <a href="main-dashboard.php" class=" inner-nav active">My Pets</a>
+            <a href="main-dashboard.php" class=" inner-nav ">My Pets</a>
             <a href="showDogs.php" class=" inner-nav  ">Dogs</a>
-            <a href="showCats.php" class=" inner-nav ">Cats</a>
+            <a href="showCats.php" class=" inner-nav active">Cats</a>
         </div>
 
     </section>
@@ -54,8 +54,8 @@
 
             <?php
 
-            $sql = "SELECT * FROM pet WHERE ownerEmail = '$user' ORDER BY ID DESC; ";
-            $result = mysqli_query($conn,$sql);
+            $sql = "SELECT * FROM pet WHERE ownerEmail = '$user' AND species = 'Cat' ORDER BY ID DESC; ";
+            $result = mysqli_query($conn, $sql);
 
             if ($result->num_rows > 0) {
                 // Output table header

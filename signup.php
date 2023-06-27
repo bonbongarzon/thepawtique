@@ -50,11 +50,11 @@ include('function/function.php');
                         }
 
                         ?>
-                        <input type="text" name="firstname" id="" placeholder="First Name">
+                        <input type="text"  name="firstname" id="" placeholder="First Name">
                         <input type="text" name="lastname" id="" placeholder="Last Name">
                         <input type="email" name="email" id="" placeholder="Email">
-                        <input type="password" name="passwordA" id="" placeholder="Password">
-                        <input type="password" name="passwordB" id="" placeholder="Confirm Password">
+                        <input type="password" name="passwordA" id="" placeholder="Password"  minlength="6">
+                        <input type="password" name="passwordB" id="" placeholder="Confirm Password"  minlength="6">
                         <a href="login.php">Have an account?</a>
                         <button type="submit" name="createAccount">Create Account</button>
                     </form>

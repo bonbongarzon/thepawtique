@@ -59,6 +59,9 @@ header>nav>div>div>a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-image: url(../assets/bg-full.svg);
+    background-size: cover;
+    background-position: center;
 }
 
 .sub-header>div:first-child {
@@ -84,8 +87,8 @@ header>nav>div>div>a {
 
 
 .sub-header .inner-nav .active {
-    background-color: lightgray;
-    border-radius: 100px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100px;font-weight: 600;
 }
 
 .myPets {
@@ -213,4 +216,5 @@ tr {
 .logo-nav-dashboard{
     font-family: 'Radley';
     font-size: 1.5em;
+    
 }

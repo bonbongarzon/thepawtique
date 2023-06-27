@@ -71,8 +71,3 @@ if (isset($_POST['performDelete'])) {
     header("location:../index.php");
 }
 
-
-if (isset($_POST['anotherLogout'])) {
-    unset($_SESSION['user']);
-    header("location:../index.php");
-}

@@ -28,14 +28,13 @@ if (isset($_SESSION['user'])) {
     <header>
         <nav>
             <div>
-                <div> <a class="logo-nav-dashboard" href="index.php">Pawtique</a>
-                    <a href="">Main Dashboard</a>
-                    <a href="">Pets</a>
+                <div> <a class="logo-nav-dashboard" href="index.php">The Pawtique</a>
+                    <a href="main-dashboard.php">My Pets</a>
                     <a href="">Account</a>
                 </div>
 
-                <form class="logout" action="includes/insertPet.php" method="post">
-                    <button name="logout">Logout</button>
+                <form class="logout" action="logout.php" method="post">
+                    <button name="logout" type="submit">Logout</button>
                 </form>
             </div>
         </nav>

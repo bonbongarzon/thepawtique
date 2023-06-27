@@ -37,8 +37,8 @@
         </div>
 
         <div class="inner-nav">
-        <a href="main-dashboard.php" class=" inner-nav active">My Pets</a>
-            <a href="showDogs.php" class=" inner-nav  ">Dogs</a>
+            <a href="main-dashboard.php" class=" inner-nav ">My Pets</a>
+            <a href="showDogs.php" class=" inner-nav active ">Dogs</a>
             <a href="showCats.php" class=" inner-nav ">Cats</a>
         </div>
 
@@ -54,7 +54,7 @@
 
             <?php
 
-            $sql = "SELECT * FROM pet WHERE ownerEmail = '$user' ORDER BY ID DESC; ";
+            $sql = "SELECT * FROM pet WHERE ownerEmail = '$user' AND species = 'Dog' ORDER BY ID DESC; ";
             $result = mysqli_query($conn,$sql);
 
             if ($result->num_rows > 0) {
